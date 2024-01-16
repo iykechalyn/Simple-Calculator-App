@@ -2,13 +2,13 @@ package simplecalculator;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JSeparator;
 
 public class CalcApp {
 
@@ -235,7 +235,42 @@ public class CalcApp {
 		equal.setFocusable(false);
 		equal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				Code to be written
+				String answer;
+				second_operand = Double.parseDouble(displayScreen.getText());
+				if(operation == "+") {
+					result = first_operand + second_operand;
+					answer = String.format("%.2f", result);
+					displayScreen.setText(answer);
+					
+				}else if(operation == "-") {
+					result = first_operand - second_operand;
+					answer = String.format("%.2f", result);
+					displayScreen.setText(answer);
+					
+				}else if(operation == "x") {
+					result = first_operand * second_operand;
+					answer = String.format("%.2f", result);
+					displayScreen.setText(answer);
+					
+				}else if(operation == "^") {
+					result = Math.pow(first_operand , second_operand);
+					answer = String.format("%.2f", result);
+					displayScreen.setText(answer);
+					
+				}else if(operation == "÷") {
+					result = first_operand / second_operand;
+					answer = String.format("%.2f", result);
+					displayScreen.setText(answer);
+					
+				}
+				else if(operation == "%") {
+					result = first_operand % second_operand;
+					answer = String.format("%.2f", result);
+					displayScreen.setText(answer);
+					
+				}
+		
+
 			}
 		});
 		equal.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -285,7 +320,7 @@ public class CalcApp {
 		clear.setFocusable(false);
 		clear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				String number = displayScreen.getText() + zero.getText();
+
 				displayScreen.setText(null);
 			}
 		});
