@@ -268,13 +268,20 @@ public class CalcApp {
 					answer = String.format("%.2f", result);
 					displayScreen.setText(answer);
 					
+				}else if(operation == "√") {
+				Double operand = Double.parseDouble(displayScreen.getText());
+					result = Math.sqrt(operand);
+					answer = String.format("%.2f", result);
+					displayScreen.setText(answer);
+					
 				}
+				
 		
 
 			}
 		});
 		equal.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		equal.setBounds(349, 258, 73, 57);
+		equal.setBounds(181, 392, 158, 57);
 		frame.getContentPane().add(equal);
 		
 		JButton squareRoot = new JButton("√");
@@ -282,7 +289,7 @@ public class CalcApp {
 		squareRoot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				first_operand = Double.parseDouble(displayScreen.getText());
-				displayScreen.setText("");
+//				displayScreen.setText("");
 				operation = "√";
 			}
 		});
@@ -366,7 +373,7 @@ public class CalcApp {
 		});
 		squareRoot_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		squareRoot_2.setFocusable(false);
-		squareRoot_2.setBounds(181, 392, 73, 57);
+		squareRoot_2.setBounds(350, 258, 73, 57);
 		frame.getContentPane().add(squareRoot_2);
 		
 //		JSeparator separator = new JSeparator();
